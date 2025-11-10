@@ -1,5 +1,7 @@
 # Counter
 
+<img width="1706" height="843" alt="Screenshot 2025-11-10 at 10 27 16 PM" src="https://github.com/user-attachments/assets/7c24858f-16a7-40e6-9e98-fa4f2116231b" />
+
 To start your Phoenix server:
 
 * Run `mix setup` to install and setup dependencies
