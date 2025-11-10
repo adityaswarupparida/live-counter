@@ -17,21 +17,25 @@ defmodule CounterWeb.CounterLive.Counter do
   def render(assigns) do
     ~H"""
       <Layouts.app flash={@flash}>
-        <section class="shadow-xl border p-4 flex items-center justify-between">
-          <div class="border p-4 border-[oklch(70%_0.213_47.604/0.3)]">
-            <h1 class="text-2xl mb-2">Count: {@count} </h1>
-            <.button phx-click="increment">+</.button>
-            <.button phx-click="decrement">-</.button>
-            <.button phx-click="reset">Reset</.button>
+        <section class="shadow-xl p-4 grid grid-cols-2 gap-4 text-center">
+          <div class="border p-4 h-48 border-[oklch(70%_0.213_47.604/0.3)] flex items-center justify-center">
+            <div>
+              <h1 class="text-3xl mb-2">Count: {@count} </h1>
+              <.button phx-click="increment">+</.button>
+              <.button phx-click="decrement">-</.button>
+              <.button phx-click="reset">Reset</.button>
+            </div>
           </div>
-          <div class="border p-4 border-[oklch(70%_0.213_47.604/0.3)]">
-            <h1 class="text-3xl mb-2">{Calendar.strftime(format_timer(@elapsed), "%H:%M:%S")} </h1>
-            <.button phx-click="start">Start</.button>
-            <.button phx-click="stop">Stop</.button>
-            <.button phx-click="reset_clock">Reset</.button>
+          <div class="border p-4 h-48 border-[oklch(70%_0.213_47.604/0.3)] flex items-center justify-center">
+            <div>
+              <h1 class="text-3xl mb-2">{Calendar.strftime(format_timer(@elapsed), "%H:%M:%S")} </h1>
+              <.button phx-click="start">Start</.button>
+              <.button phx-click="stop">Stop</.button>
+              <.button phx-click="reset_clock">Reset</.button>
+            </div>
           </div>
-          <div class="border p-4 border-[oklch(70%_0.213_47.604/0.3)]">
-            <h1 class="text-3xl mb-2">{Calendar.strftime(@date, "%H:%M:%S")} </h1>
+          <div class="border p-4 h-48 border-[oklch(70%_0.213_47.604/0.3)] col-span-2 flex items-center justify-center">
+            <h1 class="text-4xl mb-2">{Calendar.strftime(@date, "%A %Y-%m-%d  %H:%M:%S")} </h1>
           </div>
         </section>
       </Layouts.app>
